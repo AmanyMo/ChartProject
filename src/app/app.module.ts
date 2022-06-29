@@ -7,6 +7,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from '../app/pages/home/home.component';
 import { CustomerComponent } from './pages/customer/customer.component';
+import { CustomersService} from './services/customers.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -18,9 +21,10 @@ import { CustomerComponent } from './pages/customer/customer.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CustomersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
