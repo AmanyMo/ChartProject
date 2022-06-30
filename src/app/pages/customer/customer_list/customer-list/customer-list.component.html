@@ -1,0 +1,34 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">CustomerName</th>
+      <th scope="col">Service</th>
+      <th scope="col">ContractDate</th>
+      <th scope="col">ContractExpiryDate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customerCollection; let index">
+      <th scope="row">{{ customer.id }}</th>
+      <td>
+        {{ customer.customerName }}
+      </td>
+      <td>{{ customer.service }}</td>
+      <td>{{ customer.contractDate | date }}</td>
+
+      <td>{{ customer.contractExpiryDate | date }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-between p-2">
+  <ngb-pagination
+    [collectionSize]="collectionSize"
+    [(page)]="page"
+    [pageSize]="pageSize"
+    (pageChange)="refreshCustomers()"
+  >
+  </ngb-pagination>
+</div>
+

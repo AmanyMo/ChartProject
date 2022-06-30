@@ -1,7 +1,7 @@
 export class  Customer {
-    Id!: number;
-    CustomerName!: string;
-    Service!: string;
-    ContractDate!: Date;
-    ContractExpiryDate!: Date;
+    id!: number;
+    customerName!: string;
+    service!: string;
+    contractDate!: Date;
+    contractExpiryDate!: Date;
   }
