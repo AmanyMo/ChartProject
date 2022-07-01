@@ -88,6 +88,7 @@ export class HomeComponent implements OnInit {
     });
   }
   drawlineChart() {
+    // to avoid redraw at the same canvas
     let chartStatus = Chart.getChart('linechart');
     if (chartStatus != undefined) {
       chartStatus.destroy();
@@ -101,7 +102,7 @@ export class HomeComponent implements OnInit {
         labels: [
           'jan',
           'feb',
-          'march',
+          'mar',
           'Apr',
           'May',
           'Jun',
@@ -115,7 +116,7 @@ export class HomeComponent implements OnInit {
         datasets: [
           {
             label: 'Customer count per month',
-            data: [this.customerCountinMonthOfaYear],
+            data: [...this.customerCountinMonthOfaYear],
             fill: false,
             borderColor: 'rgb(75, 192, 192)',
             tension: 0.1,
@@ -137,10 +138,14 @@ export class HomeComponent implements OnInit {
   }
 
   getCustomersPerYear(year: number) {
+    this.customerCountinMonthOfaYear = [];
     this._customerService.GetAllCustomerPerYear(year).subscribe((data) => {
       this.customerCountPerYear = data;
+
       this.customerCountPerYear.forEach((el) => {
         this.customerCountinMonthOfaYear.push(el.count);
+        console.log(this.customerCountinMonthOfaYear);
+        
       });
     });
     this.drawlineChart();
