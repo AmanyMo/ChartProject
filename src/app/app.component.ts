@@ -10,7 +10,7 @@ import { CustomerPerService } from '../app/models/customerPerService';
 export class AppComponent implements OnInit {
   title = 'ChartProject';
   numOfUserPerService!: CustomerPerService[];
- // numOfUserPerCertainService!: number;
+  // numOfUserPerCertainService!: number;
   numOfUserPerDate!: number;
   serviceName: string = 'vdsl';
 
@@ -21,16 +21,11 @@ export class AppComponent implements OnInit {
   }
 
   getNumOfUserPerEachService(_serviceName: string) {
-    this._customerService.GetAllCustomerCountPerEachService()
-      .subscribe((res) =>{
-          (this.numOfUserPerService = res);
-       console.log("now res ",res);
-      }
-     
-       );
-     
-
-      console.log("now",this.numOfUserPerService);
-      
+    this._customerService
+      .GetAllCustomerCountPerEachService()
+      .subscribe((res) => {
+        this.numOfUserPerService = res;
+        console.log('now res ', res);
+      });
   }
 }

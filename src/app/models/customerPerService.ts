@@ -1,4 +1,4 @@
-export class CustomerPerService{
-    serviceName!:string;
-    count!:number;
+export class CustomerPerService {
+  serviceName!: string;
+  count!: number;
 }

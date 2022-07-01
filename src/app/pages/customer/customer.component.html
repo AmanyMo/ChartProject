@@ -1,6 +1,7 @@
-
-<app-customer-list *ngIf="customers.length>0 ; else nolist" [customerList]="customers"></app-customer-list>
-
+<app-customer-list
+  *ngIf="customers.length > 0; else nolist"
+  [customerList]="customers"
+></app-customer-list>
 <ng-template #nolist>
-    <p>no customer exist</p>
+  <p>no customer exist</p>
 </ng-template>

@@ -1,4 +1,4 @@
-export class CustomerPerYear{
-    month!:number;
-    count!:number;
+export class CustomerPerYear {
+  month!: number;
+  count!: number;
 }

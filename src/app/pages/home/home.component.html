@@ -1,52 +1,33 @@
-
-<h2> pie chart </h2>
-<div width="200" height="200" >
-    <canvas id="piechart" #piechart></canvas>
-
+<h2>pie chart</h2>
+<div width="200" height="200">
+  <canvas id="piechart" #piechart></canvas>
 </div>
-<br>
+<br />
 <!--  line chart -->
-<div class="container-fluid ">
-    <h1>Angular Select Dropdown Example - Tutsmake.com</h1>
-    <h2> line chart</h2>
-    <form [formGroup]="form" (ngSubmit)="submit()">
-           
-        <div class="form-group">
-    
-            <label for="year">Year:</label>
-            <select formControlName="year" class="form-control" (change)="changeYear($event)">
-                <option disabled>Select Year</option>
-                <!-- <option>Choose Website</option> -->
-                <option *ngFor="let web of websiteList ; index as i" [value]="web">{{web}}</option>
-            </select>
-        </div>
-       
-        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
-    </form>
-</div>
-
-<!-- <div class="btn-group me-3">
-    <button type="button" class="btn btn-primary">Choose Month</button>
-    <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
-      <button type="button" class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
-      <div class="dropdown-menu" ngbDropdownMenu>
-        <button ngbDropdownItem>January</button>
-        <button ngbDropdownItem>Two</button>
-        <button ngbDropdownItem>Four!</button>
-        <button ngbDropdownItem>One</button>
-        <button ngbDropdownItem>Two</button>
-        <button ngbDropdownItem>Four!</button>
-        <button ngbDropdownItem>One</button>
-        <button ngbDropdownItem>Two</button>
-        <button ngbDropdownItem>Four!</button>
-      </div>
+<div class="container-fluid">
+  <h1>Select a year to show chart of it</h1>
+  <h2>line chart</h2>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="year">Year:</label>
+      <select
+        formControlName="year"
+        class="form-control"
+        (change)="changeYear($event)"
+      >
+        <option disabled>Select Year</option>
+        <option *ngFor="let web of websiteList; index as i" [value]="web">
+          {{ web }}
+        </option>
+      </select>
     </div>
-  </div> -->
 
-
-  <div width="200" height="200" >
-    <canvas id="linechart" #linechart>{{myLineChart}}</canvas>
-
+    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">
+      Submit
+    </button>
+  </form>
 </div>
 
-
+<div width="200" height="200">
+  <canvas id="linechart" #linechart>{{ myLineChart }}</canvas>
+</div>

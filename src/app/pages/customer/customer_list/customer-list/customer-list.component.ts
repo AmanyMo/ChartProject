@@ -12,9 +12,7 @@ export class CustomerListComponent implements OnInit {
   page = 1;
   pageSize = 20;
   collectionSize!: number;
-
   constructor() {}
-
   ngOnInit(): void {
     this.customerCollection = this.customerList;
     this.collectionSize = this.customerList.length;
